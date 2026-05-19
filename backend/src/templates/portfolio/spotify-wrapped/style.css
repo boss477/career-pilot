@@ -1,0 +1,312 @@
+/* =========================================
+   Spotify Wrapped Portfolio Theme - style.css
+   ========================================= */
+
+/* --- Custom Properties --- */
+:root {
+  --font-primary: 'Outfit', sans-serif;
+  --bg-dark: #191414;
+  --text-light: #ffffff;
+  --green: #1ed760;
+  --purple: #a32cce;
+  --orange: #ff5722;
+  --blue: #0c67e6;
+  --pink: #e91e8c;
+  --card-radius: 0px;
+  --transition: 0.3s ease;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-primary);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Scroll Container with Snap --- */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* --- Full-Screen Card --- */
+.card {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- Gradient Backgrounds --- */
+.bg-gradient-green {
+  background: linear-gradient(145deg, #1ed760 0%, #0a8a37 50%, #065c24 100%);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(145deg, #a32cce 0%, #6a0dad 50%, #3d006b 100%);
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(145deg, #ff7043 0%, #ff5722 40%, #bf360c 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(145deg, #42a5f5 0%, #1565c0 50%, #0d47a1 100%);
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(145deg, #f06292 0%, #e91e8c 50%, #880e4f 100%);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+
+/* --- Content Wrapper --- */
+.content {
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Typography --- */
+.overline {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+}
+
+.title-oversized {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+}
+
+/* --- Stat Number (animated counter) --- */
+.stat-number {
+  display: block;
+  font-size: clamp(7rem, 20vw, 14rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  margin: 0.25rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.5rem;
+}
+
+/* --- CTA Button --- */
+.cta-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background-color: var(--text-light);
+  color: var(--bg-dark);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-decoration: none;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.cta-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25);
+}
+
+/* --- Horizontal Scroll Project Gallery --- */
+.horizontal-scroll {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1.5rem 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  align-items: stretch;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+
+/* --- Project Card --- */
+.project-card {
+  min-width: 260px;
+  min-height: 340px;
+  background: #282828;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1.5rem;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.project-number {
+  font-size: 3rem;
+  font-weight: 900;
+  opacity: 0.3;
+  display: block;
+  margin-bottom: auto;
+  padding-bottom: 1rem;
+}
+
+.project-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Decorative Background Shapes --- */
+.card::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  top: -150px;
+  right: -150px;
+  pointer-events: none;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -80px;
+  left: -80px;
+  pointer-events: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    justify-content: center;
+  }
+
+  .title-oversized {
+    font-size: clamp(2.8rem, 12vw, 5rem);
+  }
+
+  .stat-number {
+    font-size: clamp(5rem, 22vw, 8rem);
+  }
+
+  .project-card {
+    min-width: 220px;
+    min-height: 280px;
+  }
+
+  .cta-button {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-oversized {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+
+  .horizontal-scroll {
+    padding: 1rem 0.25rem;
+  }
+
+  .project-card {
+    min-width: 200px;
+  }
+}
