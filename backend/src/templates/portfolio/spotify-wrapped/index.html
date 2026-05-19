@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Wrapped - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="scroll-container">
+
+    <!-- Card 1: Intro -->
+    <section class="card bg-gradient-green">
+      <div class="content">
+        <p class="overline">Your Year in Code</p>
+        <h1 class="title-oversized">Developer<br>Wrapped.</h1>
+        <p class="subtitle">Scroll to relive your 2024.</p>
+      </div>
+    </section>
+
+    <!-- Card 2: Projects Built -->
+    <section class="card bg-gradient-purple">
+      <div class="content">
+        <p class="overline">This year you built</p>
+        <span class="stat-number" data-target="12" id="counter-projects">0</span>
+        <p class="stat-label">Projects</p>
+      </div>
+    </section>
+
+    <!-- Card 3: Years of Experience -->
+    <section class="card bg-gradient-orange">
+      <div class="content">
+        <p class="overline">With</p>
+        <span class="stat-number" data-target="5" id="counter-experience">0</span>
+        <p class="stat-label">Years of Experience</p>
+      </div>
+    </section>
+
+    <!-- Card 4: Commits -->
+    <section class="card bg-gradient-blue">
+      <div class="content">
+        <p class="overline">You pushed</p>
+        <span class="stat-number" data-target="847" id="counter-commits">0</span>
+        <p class="stat-label">Commits</p>
+      </div>
+    </section>
+
+    <!-- Card 5: Top Projects Gallery -->
+    <section class="card bg-dark">
+      <div class="content">
+        <p class="overline">Your top work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="horizontal-scroll">
+          <div class="project-card">
+            <span class="project-number">#1</span>
+            <h3 class="project-name">Project Alpha</h3>
+            <p class="project-tech">React &bull; Node.js</p>
+          </div>
+          <div class="project-card">
+            <span class="project-number">#2</span>
+            <h3 class="project-name">Project Beta</h3>
+            <p class="project-tech">Python &bull; FastAPI</p>
+          </div>
+          <div class="project-card">
+            <span class="project-number">#3</span>
+            <h3 class="project-name">Project Gamma</h3>
+            <p class="project-tech">Vue &bull; Django</p>
+          </div>
+          <div class="project-card">
+            <span class="project-number">#4</span>
+            <h3 class="project-name">Project Delta</h3>
+            <p class="project-tech">Next.js &bull; Prisma</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card 6: Skills -->
+    <section class="card bg-gradient-pink">
+      <div class="content">
+        <p class="overline">Your top skill</p>
+        <h2 class="title-oversized">JavaScript</h2>
+        <p class="subtitle">You coded in 6 languages this year.</p>
+      </div>
+    </section>
+
+    <!-- Card 7: Closing -->
+    <section class="card bg-dark">
+      <div class="content">
+        <h2 class="title-oversized">Here's to<br>2025.</h2>
+        <p class="subtitle">Keep building. Keep shipping.</p>
+        <a href="#" class="cta-button">View Full Portfolio</a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="counter.js"></script>
+</body>
+</html>
